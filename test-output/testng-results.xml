@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="190" started-at="2022-01-24T18:41:24Z" finished-at="2022-01-24T18:41:24Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="190" started-at="2022-01-24T18:41:24Z" finished-at="2022-01-24T18:41:24Z">
+      <class name="vTiger_OrganisationsHardcoding.Test.dataProvider">
+        <test-method status="PASS" signature="bookTicketTest(java.lang.String, java.lang.String)[pri:0, instance:vTiger_OrganisationsHardcoding.Test.dataProvider@4501b7af]" name="bookTicketTest" duration-ms="20" started-at="2022-01-24T18:41:24Z" data-provider="dataproviderBookTicketTest" finished-at="2022-01-24T18:41:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hassan]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[goa]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookTicketTest -->
+        <test-method status="PASS" signature="bookTicketTest(java.lang.String, java.lang.String)[pri:0, instance:vTiger_OrganisationsHardcoding.Test.dataProvider@4501b7af]" name="bookTicketTest" duration-ms="4" started-at="2022-01-24T18:41:24Z" data-provider="dataproviderBookTicketTest" finished-at="2022-01-24T18:41:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hassan]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mangalore]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookTicketTest -->
+        <test-method status="PASS" signature="bookTicketTest(java.lang.String, java.lang.String)[pri:0, instance:vTiger_OrganisationsHardcoding.Test.dataProvider@4501b7af]" name="bookTicketTest" duration-ms="5" started-at="2022-01-24T18:41:24Z" data-provider="dataproviderBookTicketTest" finished-at="2022-01-24T18:41:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hassan]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[bangalore]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookTicketTest -->
+        <test-method status="PASS" signature="bookTicketTest(java.lang.String, java.lang.String)[pri:0, instance:vTiger_OrganisationsHardcoding.Test.dataProvider@4501b7af]" name="bookTicketTest" duration-ms="6" started-at="2022-01-24T18:41:24Z" data-provider="dataproviderBookTicketTest" finished-at="2022-01-24T18:41:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hassan]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mysore]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookTicketTest -->
+        <test-method status="PASS" signature="bookTicketTest(java.lang.String, java.lang.String)[pri:0, instance:vTiger_OrganisationsHardcoding.Test.dataProvider@4501b7af]" name="bookTicketTest" duration-ms="4" started-at="2022-01-24T18:41:24Z" data-provider="dataproviderBookTicketTest" finished-at="2022-01-24T18:41:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hassan]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sakleshpur]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookTicketTest -->
+      </class> <!-- vTiger_OrganisationsHardcoding.Test.dataProvider -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
