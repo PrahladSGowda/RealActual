@@ -14,13 +14,16 @@ import org.testng.annotations.Parameters;
 import com.vtiger.comcast.pomrepositorylib.Home;
 import com.vtiger.comcast.pomrepositorylib.Login;
 
-public class BaseClass {
-	public WebDriver driver=null;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BaseClass 
+{
+	public WebDriver driver;
 	public JavaUtility jLib = new JavaUtility();
 	public WebDriverUtility wLib = new WebDriverUtility();
 	public FileUtility fLib = new FileUtility();
 	public ExcelUtility eLib = new ExcelUtility();
-	public static WebDriver sDriver=null;
+	public static WebDriver sDriver;
 	@BeforeSuite(groups={"smokeTest" ,"RegTest"})
 	public void configBS()
 	{
@@ -35,10 +38,13 @@ public class BaseClass {
 		String BROWSER = fLib.getPropertyFiles("browser");
 		if(BROWSER.equals("chrome"))
 		{
-		driver=new ChromeDriver();
+			WebDriverManager.chromedriver().setup();
+		     driver=new ChromeDriver();
+		
 		}
 		else
 		{
+			WebDriverManager.firefoxdriver().setup();
 			driver=new FirefoxDriver();
 		}
 		wLib.waitForpageLoad(driver);

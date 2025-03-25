@@ -3,6 +3,7 @@ package com.vtiger.comcast.generalUtility;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 /**
@@ -50,5 +51,15 @@ public String getsysDAte_YYYY_MM_DD()
 		Robot rc=new Robot();
 		rc.keyPress(KeyEvent.VK_ENTER);
 		rc.keyRelease(KeyEvent.VK_ENTER);
+	}
+	
+	//this method is used to get theS current date
+	public String simpleDateFormat()
+	{
+		SimpleDateFormat sdf=new SimpleDateFormat("dd/mm/yyyy");
+		String date = sdf.format(new Date());
+		
+		return date;
+	
 	}
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SmokeSuite">
+  <test thread-count="5" name="Test2">
+    <classes>
+      <class name="practice.SpiceJetPractice"/>
+      <class name="practice.PracticeDataProviderTest"/>
+      <class name="practice.DataPro"/>
+      <class name="com.crm.comcast.orgTest.UnitTest"/>
+      <class name="com.vtiger.comcast.organizationtest.CreateOrganization"/>
+      <class name="practice.ForDp"/>
+      <class name="practice.ForExecutionOrder"/>
+      <class name="practice.SpiceJetTest"/>
+      <class name="com.vtiger.comcast.organizationtest.ScreenShot"/>
+      <class name="practice.SpiceJetExceutedTest"/>
+      <class name="practice.WriteDataIntoExcel"/>
+      <class name="practice.OrgPracticeTest"/>
+      <class name="practice.FetchData"/>
+      <class name="com.vtiger.comcast.organizationtest.CreateOrgWithMultiDataTest"/>
+      <class name="com.vtiger.comcast.organizationtest.Create_ContactTest"/>
+      <class name="practice.MultipleDataPractice"/>
+      <class name="practice.FetchDataFromExcel"/>
+      <class name="vTiger_OrganisationsHardcoding.Test.dataProvider"/>
+    </classes>
+  </test> <!-- Test2 -->
+</suite> <!-- SmokeSuite -->

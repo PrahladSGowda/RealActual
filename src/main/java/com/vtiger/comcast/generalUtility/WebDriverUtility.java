@@ -17,7 +17,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.io.Files;
@@ -41,6 +43,8 @@ public void waitForElementToBeClickable(WebDriver driver,WebElement element)
 		{
 	WebDriverWait wait = new WebDriverWait(driver, 20);
 	wait.until(ExpectedConditions.visibilityOf(element));
+
+
 		}
 /**
  * @throws Throwable 
@@ -61,6 +65,11 @@ public void waitAndClick(WebElement element) throws Throwable
 		}
 	}
 }
+
+public void fluent()
+{
+
+}
 /**
  * 
  */
@@ -68,6 +77,12 @@ public void select(WebElement element,String option)
 {
 	Select select = new Select(element);
 	select.selectByVisibleText(option);
+}
+
+public void select(WebElement element,int index)
+{
+	Select select = new Select(element);
+	select.selectByIndex(index);
 }
 /**
  * 
@@ -84,6 +99,12 @@ public void RightClick(WebDriver driver,WebElement element)
 {
 	Actions act = new Actions(driver);
 	act.contextClick(element).perform();
+}
+
+public void RightClick(WebDriver driver)
+{
+	Actions act = new Actions(driver);
+	act.contextClick().perform();
 }
 /**
  * 
@@ -137,12 +158,13 @@ public void switchFrame(WebDriver driver,String IdOrName)
 {
 	driver.switchTo().frame(IdOrName);
 }
-public void takeScreenshot(WebDriver driver,String screenshotName) throws Throwable
+public String takeScreenshot(WebDriver driver,String screenshotName) throws Throwable
 {
 	TakesScreenshot ts=(TakesScreenshot) driver;
 	File src = ts.getScreenshotAs(OutputType.FILE);
 	File dest = new File("./screenshot/"+screenshotName+".PNG");
 	Files.copy(src, dest);
+	return dest.getAbsolutePath();
 }
 /**
  * 

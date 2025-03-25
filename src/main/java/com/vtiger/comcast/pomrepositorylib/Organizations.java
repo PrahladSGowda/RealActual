@@ -22,6 +22,9 @@ private WebElement searchNowBtn;
 @FindBy(xpath="//a")
 private WebElement orgName;
 
+@FindBy(name="industry")
+private WebElement indType;
+
 public WebElement getCreateOrgImg() {
 	return createOrgImg;
 	
@@ -35,7 +38,14 @@ public WebElement getSearchNowBtn() {
 	return searchNowBtn;
 }
 
-public WebElement getOrgName() {
+public WebElement getOrgName()
+{
 	return orgName;
 }
+
+public WebElement getIndType() {
+	return indType;
+}
+
+
 }

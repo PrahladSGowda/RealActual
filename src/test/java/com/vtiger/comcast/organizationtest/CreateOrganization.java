@@ -19,6 +19,7 @@ public class CreateOrganization extends BaseClass {
 	hp.getOrgLink().click();
 	Organizations op = new Organizations(driver);
 	op.getCreateOrgImg().click();
+	Assert.fail();
 	CreateNewOrganization cno = new CreateNewOrganization(driver);
 	cno.createOrg(org);
 	cno.getSaveBtn().click();

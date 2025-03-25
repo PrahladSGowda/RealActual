@@ -10,15 +10,32 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+
 public class LisImpClass extends BaseClass implements ITestListener{
 
-	public void onFinish(ITestContext arg0) {
-		// TODO Auto-generated method stub
+	ExtentReports report;
+	ExtentTest test;
+	public void onFinish(ITestContext context) {
+		report.flush();
 		
 	}
 
-	public void onStart(ITestContext arg0) {
-		// TODO Auto-generated method stub
+	public void onStart(ITestContext context) {
+		ExtentSparkReporter htmlReport=new ExtentSparkReporter("./Extent-Reports"+new JavaUtility().getsysDAte_YYYY_MM_DD()+".html");
+		htmlReport.config().setDocumentTitle("SDET-29 EXECUTION REPORT");
+		htmlReport.config().setTheme(Theme.DARK);
+		htmlReport.config().setReportName("Selenium Execution");
+		report=new ExtentReports();
+		report.attachReporter(htmlReport);
+		report.setSystemInfo("Base-browser", "chrome");
+		report.setSystemInfo("OS", "windows");
+		report.setSystemInfo("base-url", "http://localhost:8888");
+		report.setSystemInfo("reporter-name", "prahlad");
 		
 	}
 
@@ -26,32 +43,45 @@ public class LisImpClass extends BaseClass implements ITestListener{
 		// TODO Auto-generated method stub
 		
 	}
-
+//implementation for itestlistener interface
 	public void onTestFailure(ITestResult result) {
-		String currentsysdate = jLib.getsysDAte_YYYY_MM_DD();
+		String path=null;
+		String screenshotName;
+		
+	String currentsysdate = jLib.getsysDAte_YYYY_MM_DD();
+	 String testName = result.getMethod().getMethodName();
+	 screenshotName=testName+currentsysdate;
+//		System.out.println(testName+"execute and im listening");
+//		EventFiringWebDriver eDriver=new EventFiringWebDriver(BaseClass.sDriver);
+//	File srcFile = eDriver.getScreenshotAs(OutputType.FILE);
+	
+		try {
+			path=new WebDriverUtility().takeScreenshot(BaseClass.sDriver, screenshotName);
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+	test.log(Status.FAIL, testName+"failed");
+	//it will capture the exception and login to report
+	test.log(Status.FAIL, result.getThrowable());
+	test.addScreenCaptureFromPath(path);
+	}
+
+	public void onTestSkipped(ITestResult result) {
+	
 		String testName = result.getMethod().getMethodName();
-		System.out.println(testName+"execute and im listening");
-		EventFiringWebDriver eDriver=new EventFiringWebDriver(BaseClass.sDriver);
-	File srcFile = eDriver.getScreenshotAs(OutputType.FILE);
-	try {
-		FileUtils.copyFile(srcFile, new File("./Screenshots/"+testName+currentsysdate+".png"));
-	} catch (IOException e) {
-
-	}
+		test.log(Status.SKIP, testName+"skipped");
+		test.log(Status.SKIP, result.getThrowable());
 	}
 
-	public void onTestSkipped(ITestResult arg0) {
-		// TODO Auto-generated method stub
+	public void onTestStart(ITestResult result) {
+		String testName = result.getMethod().getMethodName();
+		test = report.createTest(testName);
 		
 	}
 
-	public void onTestStart(ITestResult arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void onTestSuccess(ITestResult arg0) {
-		// TODO Auto-generated method stub
+	public void onTestSuccess(ITestResult result) {
+		String testName = result.getMethod().getMethodName();
+		test.log(Status.PASS, testName+"passed");
 		
 	}
 }
